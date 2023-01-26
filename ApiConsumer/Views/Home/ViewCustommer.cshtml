@@ -1,0 +1,50 @@
+﻿@model Custommer
+@{
+    ViewData["Title"] = "Vista del cliente";
+}
+
+
+<div class="card">
+  <div class="card-header">
+    @ViewBag.action
+  </div>
+  <div class="card-body">
+      
+      <form asp-action="SaveCustommer" asp-controller="Home" method="post" asp-route-newClient="@ViewBag.newClient">
+
+          <div class="mb-2">
+              <label class="form-label">Id de Cliente</label>
+              <input type="text" class="form-control form-control-sm" asp-for="CustomerId">
+          </div>
+
+          <div class="mb-2">
+              <label class="form-label">Empresa</label>
+              <input type="text" class="form-control form-control-sm" asp-for="CompanyName">
+          </div>
+
+          <div class="mb-2">
+              <label class="form-label">Nombre</label>
+              <input type="text" class="form-control form-control-sm" asp-for="ContactName">
+          </div>
+
+          <div class="mb-2">
+              <label class="form-label">Dirección</label>
+              <input type="text" class="form-control form-control-sm" asp-for="Address">
+          </div>
+
+          <div class="mb-2">
+              <label class="form-label">Ciudad</label>
+              <input type="text" class="form-control form-control-sm" asp-for="City">
+          </div>
+
+          <div class="mb-2">
+              <label class="form-label">Telefono</label>
+              <input type="text" class="form-control form-control-sm" asp-for="Phone">
+          </div>
+
+          <button type="submit" class="btn btn-success">Aceptar</button>
+          <a asp-action="Index" asp-controller="Home" class="btn btn-warning">Cancelar</a>
+      </form>
+
+  </div>
+</div>

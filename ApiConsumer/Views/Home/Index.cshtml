@@ -1,0 +1,49 @@
+﻿@model List<Custommer>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+   
+</div>
+
+
+<div class="card">
+  <div class="card-header">
+    Lista de clientes
+  </div>
+  <div class="card-body">
+      <table class="table">
+          <thead>
+              <tr>
+                  <th>Cliente Id</th>
+                  <th>Empresa</th>
+                  <th>Nombre</th>
+                  <th>Dirección</th>
+                  <th>Ciudad</th>
+                  <th>Telefono</th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+              @foreach (var item in Model)
+              {
+                      <tr>
+                          <td>@item.CustomerId</td>
+                          <td>@item.CompanyName</td>
+                          <td>@item.ContactName</td>
+                          <td>@item.Address</td>
+                          <td>@item.City</td>
+                          <td>@item.Phone</td>
+                          <td>
+                            <div class="btn-group" role="group">
+                                <a id="btn-align" asp-action="ViewCustommer" asp-controller="Home" asp-route-CustomerId="@item.CustomerId" class="btn btn-outline-primary ">Editar</a>
+                                <a id="btn-align" asp-action="Delete" asp-controller="Home" asp-route-CustomerId="@item.CustomerId" class="btn btn-outline-danger ">Eliminar</a>
+                            </div>
+                          </td>
+                      </tr>
+              }
+          </tbody>
+      </table>
+  </div>
+</div>
