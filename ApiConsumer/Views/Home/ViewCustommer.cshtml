@@ -4,9 +4,10 @@
 }
 
 
-<div class="card">
-  <div class="card-header">
-    @ViewBag.action
+<div class="card border-primary mb-3">
+  <div class="card-header card-title"  style="max-height: 45px;">
+    
+    <h5 class="card-title">@ViewBag.action</h5>
   </div>
   <div class="card-body">
       
@@ -42,8 +43,11 @@
               <input type="text" class="form-control form-control-sm" asp-for="Phone">
           </div>
 
-          <button type="submit" class="btn btn-success">Aceptar</button>
-          <a asp-action="Index" asp-controller="Home" class="btn btn-warning">Cancelar</a>
+          <div class="mx-auto">
+              <button type="submit" class="btn btn-success btn-lg btn-block align-middle">Aceptar</button>
+              <a asp-action="Index" asp-controller="Home" class="btn btn-danger btn-lg btn-block align-middle">Cancelar</a>
+          </div>
+          
       </form>
 
   </div>
